@@ -55,7 +55,15 @@ def subscribe():
 def send_confirmation_email(recipient_email, recipient_name):
     msg = Message('Subscription Confirmation',
                   recipients=[recipient_email])
-    msg.body = f'Dear {recipient_name},\n\nThank you for subscribing to our newsletter!'
+    msg.body = f'''Dear {recipient_name},\n\nThank you for signing up for our newsletter. We’re deeply sorry that booking tickets from our website is your only option right now. Honestly, we had bigger dreams for you—first-class seats, private jets, or maybe even a teleportation device. But here we are. 😂
+
+Rest assured, our team of travel enthusiasts (and occasional dreamers) wish you nothing but financial prosperity in the future, so one day you can upgrade to... well, not us. 💸✈️
+
+In the meantime, let’s make this journey together a little more fun! We’ve got great destinations and deals, so stick with us. Who knows, you might actually like it here!
+
+Best wishes,
+
+Just Kidding Airways'''
     mail.send(msg)
 
 @app.route('/api/book', methods=['POST'])
